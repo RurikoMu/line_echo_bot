@@ -39,15 +39,18 @@ def callback():
 
     return "OK"
 
+import random
+import datetime
+
 def generate_response(from_user, text):
-    res = []##配列を作成
-    res.append(f"あら{from_user}さん")##resという配列に追加
+    res = []#配列を作成
+    res.append(f"あら{from_user}さん、")#resという配列の末尾に追加
     if "こん" in text:
         res.append(TextMessage(text="こんにちは！"))
     elif "おは" in text:
         res.append(TextMessage(text="おはようございます！"))
     else:
-        res.append("ははは、")
+        res.append(TextMessage("何言ってるの？"))
     return res
 
 @handler.add(MessageEvent, message=TextMessageContent)
