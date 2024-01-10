@@ -41,11 +41,13 @@ def callback():
 
 def generate_response(from_user, text):
     res = []##配列を作成
-    res.append(f"あら{from_user}さん！")##配列に追加
+    res.append(f"あら{from_user}さん")##resという配列に追加
     if "こん" in text:
-        res.append("こんにちは！")
+        res.append(TextMessage(text="こんにちは！"))
+    elif "おは" in text:
+        res.append(TextMessage(text="おはようございます！"))
     else:
-        res.append(f"{text}ってなに？")
+        res.append("ははは、")
     return res
 
 @handler.add(MessageEvent, message=TextMessageContent)
