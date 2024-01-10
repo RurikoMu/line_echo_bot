@@ -44,7 +44,7 @@ import datetime
 
 def generate_response(from_user, text):
     res = []#配列を作成
-    res.appendTextMessage(f"あら{from_user}さん、")#resという配列の末尾に追加
+    res.append(TextMessage(text=f"あら{from_user}さん、"))#resという配列の末尾に追加
     if "こん" in text:
         res.append(TextMessage(text="こんにちは！"))
     elif "おは" in text:
